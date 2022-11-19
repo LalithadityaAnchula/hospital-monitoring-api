@@ -20,10 +20,7 @@ connectDB();
 
 //Route files
 const auth = require("./routes/auth");
-const all = require("./routes/all");
-const cities = require("./routes/cities");
-const requests = require("./routes/requests");
-const downloads = require("./routes/downloads");
+const records = require("./routes/records");
 
 //intializing app variable with express
 const app = express();
@@ -90,10 +87,7 @@ if (process.env.NODE_ENV === "development") {
 
 //Mount routers or linking routers
 app.use("/api/v1/auth", auth);
-app.use("/api/v1/all", all);
-app.use("/api/v1/cities", cities);
-app.use("/api/v1/:slotId/requests", requests);
-app.use("/api/v1/downloads/certificate", downloads);
+app.use("/api/v1/records", records);
 
 //Error handling middleware
 app.use(errorHandler);
